@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvaan Ayurvedic Clinic</title>
+    <link rel="icon" href="/images/logo.png">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/css/goTocart.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- header -->
+    <header class="bg-blue">
+        <nav class="navbar bg-blue">
+            <div class="container flex">
+                <a href="/index.html" class="navbar-brand">
+                    <img class="logo-nav" src="images/logo.png" alt="site logo">
+                </a>
+                <button type="button" class="navbar-show-btn">
+                    <img src="images/ham-menu-icon.png">
+                </button>
+
+                <div class="navbar-collapse bg-white">
+                    <button type="button" class="navbar-hide-btn">
+                        <img src="images/close-icon.png">
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/component/about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/component/package.html" class="nav-link">Package</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/component/blog.html" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/component/contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="search-bar">
+                        <form>
+                            <div class="search-bar-box flex navbar-nav-desktop">
+                                <a href="/goToCart.html">
+                                    <img class="cart-icon"
+                                        src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-16.png">
+                                </a>
+                                <sup id="cart-count" class="cart-count" style="color: aliceblue;"></sup>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end of header -->
+
+    <main style="padding-top: 15rem;">
+        <section class="noItem" style="height: 78vh;">
+            <h2 class="emptycard">Cart is Empty</h2>
+        </section>
+        <section id="checkout-form" class="showItem">
+            <div class="container flex" id="qq">
+                <div class="left-section">
+                    <form id="payment-form">
+                        <div class="container flex">
+                            <div class="row input-container">
+                                <h2>Enter the shipping address</h2>
+                                <div class="col-xs-12">
+                                    <div class="styled-input wide">
+                                        <input type="text" id="name" name="name" placeholder="Name"
+                                            onkeyup="validateName()" required>
+                                    </div>
+                                    <span id="name-Error" style="color: red;"></span>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="styled-input">
+                                        <input type="email" id="email" name="email" placeholder="Email"
+                                            onkeyup="validateEmail()" required>
+                                        <span id="email-error" style="color: red;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="styled-input" style="float:right;">
+                                        <input type="text" id="mobile" name="mobile" placeholder="Contact Number"
+                                            onkeyup="validateMob()" required>
+                                        <span id="mob-error" style="color: red;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="styled-input wide">
+                                        <textarea id="address" name="address" placeholder="Address" required></textarea>
+                                    </div>
+                                </div>
+                                <button class="btn" id="rzp-button1" type="submit" onclick="myFunction()">Pay</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="right-section" style="height: 78vh;">
+                    <div class="bb">
+                        <table class="product-table">
+                            <thead>
+                                <tr>
+                                    <th>Items</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order">
+                            </tbody>
+                        </table>
+                        <table class="product-table" style="border-radius: 0px;">
+                            <tbody>
+                                <tr id="discount">
+                                    <th style="width: 49%;">Discount</th>
+                                    <th id="discount_amount"></th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 49%;">Order Total</th>
+                                    <th id="grand_amount"></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!--cart start-->
+
+
+    <!--cart end-->
+
+    <!-- footer  -->
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
+                    <h3 class="footer-head">about us</h3>
+                    <div class="icon">
+                        <img src="images/logo.png">
+                    </div>
+                    <p class="text text-md" style="padding-right: 14px;">Nirvaan Ayurvedic Clinic: Traditional Ayurveda, Modern Healthcare, Comprehensive Solutions.</p>
+                    <address>
+                        Lucknow
+                    </address>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">Packages</h3>
+                    <ul class="tags-list flex">
+                        <li>Premature Ejaculation</li>
+                        <li>Penis Enlargement</li>
+                        <li>Nightfall</li>
+                        <li>Dhatu Rog</li>
+                        <li>Erectile Dysfunction</li>
+                        <li>Constipation</li>
+                        <li>Low Libido</li>
+                        <li>Booster Pack</li>
+                        <li>Erection Problem</li>
+                    </ul>
+                </div>
+
+                <div class="footer-item" style="padding-left: 10px;">
+                    <h3 class="footer-head">Quick Links</h3>
+                    <ul>
+                        <li><a href="/component/package.html" class="text-white">Our Services</a></li>
+                        <li><a href="/component/blog.html" class="text-white">Blog</a></li>
+                        <li><a href="/component/PrivacyPolicy.html" class="text-white">Privacy Policy</a></li>
+                        <li><a href="/component/T&C.html" class="text-white">Terms and Condition</a></li>
+                        <li><a href="/component/Shipping.html" class="text-white">Shipping and Refund</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">make an appointment</h3>
+                    <p class="text text-md">Reach out for assistance, questions, or appointments.
+                    </p>
+                    <ul class="appointment-info">
+                        <li>8:00 AM - 11:00 AM</li>
+                        <li>2:00 PM - 05:00 PM</li>
+                        <li>8:00 PM - 11:00 PM</li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span style="margin-left: 0;">nirvaanayurvedic880@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8429663333</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <ul class="flex">
+                    <li><a href="#" class="text-white flex"> <i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="text-white flex"> <i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" class="text-white flex"> <i class="fab fa-linkedin"></i></a></li>
+                </ul>
+                <p style="padding-top: 14px;color: white">© Copyright Nirvaan Ayurvedic Clinic 2024. Designed and Developed by: <a href="https://owlmarkmedia.in/" style="color: #006e36;font-weight: 700;">owlmarkmedia.in</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer  -->
+
+    <script>
+        function disableSubmitButton(disable) {
+            const submitButton = document.getElementById("rzp-button1");
+            submitButton.disabled = disable;
+            if (disable) {
+                submitButton.classList.add('disabled');
+            } else {
+                submitButton.classList.remove('disabled');
+            }
+        }
+
+        function validateName() {
+            const nameField = document.getElementById("name");
+            const nameError = document.getElementById("name-Error");
+            const name = nameField.value.trim();
+
+            if (name.length < 5) {
+                nameError.textContent = "Name must be at least 5 characters long";
+                disableSubmitButton(true);
+                return false;
+            } else {
+                disableSubmitButton(false);
+                nameError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            const emailField = document.getElementById("email");
+            const emailError = document.getElementById("email-error");
+            const email = emailField.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+            if (!email) {
+                emailError.textContent = "Please enter a valid email";
+                disableSubmitButton(true);
+                return false;
+            } else {
+                disableSubmitButton(false);
+                emailError.textContent = "";
+                return true;
+            }
+        }
+        function validateMob() {
+            const mobField = document.getElementById("mobile");
+            const mobError = document.getElementById("mob-error");
+            const mobile = mobField.value.match(/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/);
+            if (!mobile) {
+                mobError.textContent = "Please enter a valid email";
+                disableSubmitButton(true);
+                return false;
+            } else {
+                disableSubmitButton(false);
+                mobError.textContent = "";
+                return true;
+            }
+        }
+
+
+        function myFunction() {
+            let x = document.getElementById("name").value;
+            let y = document.getElementById("email").value;
+            let z = document.getElementById("mobile").value;
+            let a = document.getElementById("address").value;
+            try {
+                if (x.trim() == "") throw "Name";
+                if (y.trim() == "") throw "Email";
+                if (z.trim() == "") throw "Contact No.";
+                if (a.trim() == "") throw "Address";
+            }
+            catch (err) {
+                alert(err + " is empty ")
+            }
+        }
+    </script>
+
+    <!-- custom js -->
+    <script src="/js/script.js"></script>
+    <script>
+        // Function to handle deleting item from cart
+        function deleteItem(event) {
+            const button = event.target;
+            const row = button.closest('tr');
+            const itemName = row.querySelector('td:first-child').innerText;
+
+            // Retrieve items from local storage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Find index of item to delete
+            const index = cartItems.findIndex(item => item.name === itemName);
+
+            // Remove item from cartItems array
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+
+                // Update local storage
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                location.reload();
+                // Update cart count
+                cart_count();
+
+                // Display updated order items
+                displayOrderItems();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add event listener to delete buttons
+            const deleteButtons = document.querySelectorAll('.delete-button');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', deleteItem);
+            });
+
+            // Function to display order items
+            function displayOrderItems() {
+                const orderDiv = document.getElementById('order');
+                let orderHTML = '';
+                let itemLength;
+                let discountAmount;
+                const addItemArray = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+                if (addItemArray) {
+                    itemLength = addItemArray.length
+                }
+
+                if (addItemArray.length === 0) {
+                    orderHTML = '<tr><td colspan="3">Nothing to show here</td></tr>';
+                } else {
+                    // Fetch JSON data
+                    fetch(jsonFilePath)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            // Compare each item in addItemArray with items in the JSON data and retrieve the amount
+                            let total_amount = 0;
+                            addItemArray.forEach((item, index) => {
+                                const matchingItem = data.package.find(packageItem => packageItem.name === item.name);
+                                total_amount += matchingItem.amount;
+                            })
+
+                            if (addItemArray.length == 1) {
+                                document.getElementById('discount_amount').innerHTML = "₹" + 0;
+                                document.getElementById('grand_amount').innerHTML = "₹" + total_amount;
+                            } else if (addItemArray.length == 2) {
+                                document.getElementById('discount_amount').innerHTML = "₹" + ((total_amount * 5) / 100);
+                                document.getElementById('grand_amount').innerHTML = "₹" + (total_amount - ((total_amount * 5) / 100));
+                            } else {
+                                document.getElementById('discount_amount').innerHTML = "₹" + ((total_amount * 10) / 100);
+                                document.getElementById('grand_amount').innerHTML = "₹" + (total_amount - ((total_amount * 10) / 100));
+                            }
+
+                            addItemArray.forEach(item => {
+                                const matchingItem = data.package.find(packageItem => packageItem.name === item.name);
+
+                                if (matchingItem) {
+                                    orderHTML += `
+                                <tr>
+                                    <td>${item.name}</td>
+                                    <td>₹${matchingItem.amount}</td>
+                                    <td><button class="delete-button">Delete</button></td>
+                                </tr>
+                            `;
+                                }
+                            });
+
+                            // Display the order items
+                            orderDiv.innerHTML = orderHTML;
+
+                            // Add event listener to delete buttons again after updating order items
+                            const deleteButtons = document.querySelectorAll('.delete-button');
+                            deleteButtons.forEach(button => {
+                                button.addEventListener('click', deleteItem);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('There was a problem fetching the JSON data:', error);
+                        });
+                }
+            }
+
+            displayOrderItems();
+        });
+    </script>
+    <script>
+        // Define the path to your JSON file
+        const jsonFilePath = 'const.json';
+        let addItemArray = [];
+        const cartSection = document.getElementsByClassName('showItem')[0];
+        const cartSection1 = document.getElementsByClassName('noItem')[0];
+
+        function getCartItems() {
+            const cartItems = localStorage.getItem('cartItems');
+            if (cartItems == null) {
+                cartSection1.style.display = 'flex';
+                cartSection.style.display = 'none'
+            } else {
+                addItemArray = JSON.parse(cartItems);
+                if (addItemArray.length > 0) {
+                    cartSection.style.display = 'block';
+                    cartSection1.style.display = 'none';
+                } else {
+                    cartSection1.style.display = 'flex';
+                    cartSection.style.display = 'none'
+                }
+
+            }
+
+            return cartItems ? JSON.parse(cartItems) : [];
+
+        }
+
+        function cart_count() {
+            const countElements = document.querySelectorAll('.cart-count');
+const cartItems = getCartItems();
+countElements.forEach((element, index) => {
+  element.textContent = cartItems.length; // Update each element with the cart count
+});
+        }
+        cart_count();
+
+        // Function to handle adding item to cart
+        function addCart(event) {
+            const button = event.target;
+            button.classList.add('disabled');
+
+            // Apply CSS styles to the button to visually indicate the disabled state
+            button.style.opacity = '0.5'; // Example CSS style
+            button.style.cursor = 'not-allowed'; // Example CSS style
+            const item = JSON.parse(button.dataset.item);
+            addItemArray = [...addItemArray, item]
+            console.log(addItemArray)
+            localStorage.setItem('cartItems', JSON.stringify(addItemArray));
+            cart_count();
+        }
+
+        // Fetch the JSON file
+        fetch(jsonFilePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Process the JSON data and generate HTML for each package item
+                const packageServiceInner = document.getElementById('package-service-inner');
+                data.package.forEach(item => {
+                    const packageServiceItem = document.createElement('div');
+                    packageServiceItem.classList.add('package-service-item', 'bg-white');
+
+                    packageServiceItem.innerHTML = `
+                    <div class="icon flex">
+                        <i class="fas fa-phone fa-2x"></i>
+                    </div>
+                    <h3>${item.name}</h3>
+                    <p class="text text-sm">${item.description}</p>
+                    <p class="text text-sm">Amount: $${item.amount}</p>
+                    <a class="btn btn-blue" onclick="addCart(event)" id='cart-button' data-item='${JSON.stringify(item)}'>Buy Now</a>
+                    `;
+
+                    packageServiceInner.appendChild(packageServiceItem);
+                });
+            })
+            .catch(error => {
+                console.error('There was a problem fetching the JSON data:', error);
+            });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{
+    "package": [
+        {
+            "name": "Premature ejaculation",
+            "description": "Resolve early climax issues effectively with personalized treatment plans.",
+            "amount": 9500
+        },
+        {
+            "name": "Penis enlargement",
+            "description": "Enhance size and confidence with safe and proven enlargement methods.",
+            "amount": 9500
+        },
+        {
+            "name": "Nightfall",
+            "description": "Combat nocturnal emissions with specialized treatment for improved sleep quality.",
+            "amount": 5500
+        },
+        {
+            "name": "Dhatu Rog",
+            "description": "Address Dhatu Rog symptoms and restore vitality with personalized care.",
+            "amount": 5500
+        },
+        {
+            "name": "Erectile dysfunction",
+            "description": "Regain sexual function and confidence with effective erectile dysfunction treatments.",
+            "amount": 9500
+        },
+        {
+            "name": "Constipation",
+            "description": "Relieve discomfort and promote digestive health with tailored constipation treatments.",
+            "amount": 5500
+        },
+        {
+            "name": "Low Libido",
+            "description": "Boost sexual desire and vitality with personalized solutions for low libido.",
+            "amount": 5500
+        },
+        {
+            "name": "Booster pack",
+            "description": "Revitalize your overall health and well-being with our comprehensive booster pack.",
+            "amount": 7500
+        },
+        {
+            "name": "Erection problem",
+            "description": "Overcome erection difficulties with personalized treatment plans for improved sexual function.",
+            "amount": 9500
+        }
+    ]
+}

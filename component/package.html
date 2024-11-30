@@ -24,7 +24,7 @@
     <header class="bg-blue">
         <nav class="navbar bg-blue">
             <div class="container flex">
-                <a href="/index.html" class="navbar-brand">
+                <a href="/" class="navbar-brand">
                     <img class="logo-nav" src="/images/logo.png" alt="site logo">
                 </a>
                 <div style="display: flex;">
@@ -51,7 +51,7 @@
                     </button>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/index.html" class="nav-link">Home</a>
+                            <a href="/" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="/component/about.html" class="nav-link">About</a>
@@ -297,8 +297,8 @@ This condition, considered a type of prameya in Ayurveda, involves the involunta
                             <img src="/images/logo.png">
                         </div>
                         <p class="text text-md" style="padding-right: 14px;">Nirvaan Ayurvedic Clinic: Traditional Ayurveda, Modern Healthcare, Comprehensive Solutions.</p>
-                        <address>
-                            Lucknow
+                        <address style="padding-right: 14px;">
+                            Brahm Dutt Plaza, opposite Hotel Piccadily, Alambagh, Lucknow, Uttar Pradesh 226012
                         </address>
                     </div>
     
@@ -358,8 +358,16 @@ This condition, considered a type of prameya in Ayurveda, involves the involunta
                 </div>
             </div>
         </footer>
-        <!-- end of footer  -->
-
+        
+        <div class="bot-button" onclick="toggleBotOptions()">
+            <div id="bot-icon"><i class="fa-solid fa-plus"></i></div>
+            <div id="bot-options" class="hidden">
+              <a href="tel:+91 8429663333"><i class="phone-icon fa-solid fa-phone"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=918429663333&text=Hello%2C%20I%20want%20to%20book%20an%20appoinment."><i class="icon fa-brands fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/nirvaanayurvedic/"><i class="icon fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        <!-- end of footer  -->  
 
         <!-- custom js -->
         <script src="/./js/script.js"></script>
@@ -386,22 +394,34 @@ countElements.forEach((element, index) => {
 });
             }
             cart_count();
-    
-            // Function to handle adding item to cart
+
             function addCart(event) {
-                const button = event.target;
-                button.classList.add('disabled');
+            const button = event.target;
+            button.classList.add('disabled');
+
+            // Apply CSS styles to the button to visually indicate the disabled state
+            button.style.opacity = '0.5'; // Example CSS style
+            button.style.cursor = 'not-allowed'; // Example CSS style
+            button.style.pointerEvents = 'none';
+            button.textContent = 'Added to Cart';
+            const item = JSON.parse(button.dataset.item);
+            addItemArray = [...addItemArray,item]
+            localStorage.setItem('cartItems', JSON.stringify(addItemArray));
+            cart_count();
+        }
     
-                // Apply CSS styles to the button to visually indicate the disabled state
-                button.style.opacity = '0.5'; // Example CSS style
-                button.style.cursor = 'not-allowed'; // Example CSS style
-                button.style.pointerEvents = 'none';
-                button.textContent = 'Added to Cart';
-                const item = JSON.parse(button.dataset.item);
-                addItemArray = [...addItemArray,item]
-                localStorage.setItem('cartItems', JSON.stringify(addItemArray));
-                cart_count();
-            }
+            const iconImages = {
+           1 : '/./images/pre_ejac.png',
+           2 : '/./images/enlarge.png',
+           3 : '/./images/nf.png',
+           4 : '/./images/dr.png',
+           5 : '/./images/ed.png',
+           6 : '/./images/const.png',
+           7 : '/./images/ll.png',
+           8 : '/./images/bp.png',
+           9 : '/./images/pre_ejac.png'
+    // Add more keys and image URLs as needed
+};
     
             // Fetch the JSON file
             fetch(jsonFilePath)
@@ -417,15 +437,15 @@ countElements.forEach((element, index) => {
                     data.package.forEach(item => {
                         const packageServiceItem = document.createElement('div');
                         packageServiceItem.classList.add('package-service-item', 'bg-white');
-    
+                        const iconImage = iconImages[item.key];
                         packageServiceItem.innerHTML = `
                     <div class="icon flex">
-                        <i class="fas fa-phone fa-2x"></i>
+                        <img src="${iconImage}" alt="Icon" class="icon-img">
                     </div>
                     <h3>${item.name}</h3>
                     <p class="text text-sm">${item.description}</p>
-                    <p class="text text-sm">Amount: $${item.amount}</p>
-                    <a class="btn btn-blue cart-button" onclick="addCart(event)" data-item='${JSON.stringify(item)}'>Buy Now</a>
+                    <p  class="cart-amount"> ₹ ${item.amount}</p>
+                    <a class="btn btn-blue cart-button" onclick="addCart(event)" data-item='${JSON.stringify(item)}' style="margin: 1rem">Add to Cart</a>
                 `;
     
                         packageServiceInner.appendChild(packageServiceItem);
@@ -439,7 +459,7 @@ countElements.forEach((element, index) => {
                      const cartButtonElements = document.querySelectorAll('.cart-button');
                      cartButtonElements.forEach(button => {
                     const item = JSON.parse(button.dataset.item);
-                    console.log(item)
+                    
                     const isInCart = cartItems.some(cartItem => cartItem.name === item.name);
                     if (isInCart) {
                         button.disabled = true;
@@ -460,6 +480,17 @@ countElements.forEach((element, index) => {
                     console.error('There was a problem fetching the JSON data:', error);
                 });
     
+        </script>
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/65cdf3e98d261e1b5f60ca74/1hmm81ib7';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
         </script>
 </body>
 

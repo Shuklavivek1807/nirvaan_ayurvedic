@@ -196,9 +196,7 @@ h1, h2, h3{
 
 
 /* header */
-.header{
-    min-height: 100vh;
-}
+
 .navbar{
     position: fixed;
     top: 0;
@@ -817,7 +815,14 @@ button[class ^= navbar]:hover{
 
 }
 
+@media(max-width: 768px){
+    .package-service-item{
+        padding: 1rem;
+    }
+}
+
 @media(min-width: 768px){
+
     .header-inner-left h1{
         font-size: 5.7rem;
     }
@@ -1098,3 +1103,83 @@ button[class ^= navbar]:hover{
 .disable-button {
     cursor:none;
 }
+
+.bot-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 213, 82);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #bot-options {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  #bot-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .rotated {
+    transform: rotate(45deg);
+  }
+
+  .icon{
+    color: rgba(0, 213, 82);
+    font-size: 3vh;
+    padding: 10px;
+  }
+  .phone-icon{
+    color: rgba(0, 213, 82);
+    font-size: 2.5vh;
+    padding: 10px;
+  }
+  
+
+  .video-container {
+    width: 80%; /* Set the width */
+    height: 51vh; /* Set the height */
+    object-fit: fill;
+  }
+  .video-box{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .video-flex{
+    display: flex;
+  }
+
+  .icon-img{
+    transform: rotate(-45deg);
+    width: 82%;
+  }
+  
+  @media (max-width : 990px){
+    .video-container {
+        width: 90%;
+        justify-content: center;
+      }
+      .video-flex{
+        display: block;
+      }
+  }
+  

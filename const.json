@@ -1,49 +1,58 @@
 {
     "package": [
-        {
+        {   
+            "key": "1",
             "name": "Premature ejaculation",
             "description": "Resolve early climax issues effectively with personalized treatment plans.",
-            "amount": 9500
+            "amount": 5500
         },
         {
+            "key": "2",
             "name": "Penis enlargement",
             "description": "Enhance size and confidence with safe and proven enlargement methods.",
-            "amount": 9500
+            "amount": 5500
         },
         {
+            "key": "3",
             "name": "Nightfall",
             "description": "Combat nocturnal emissions with specialized treatment for improved sleep quality.",
-            "amount": 5500
+            "amount": 3500
         },
         {
+            "key": "4",
             "name": "Dhatu Rog",
             "description": "Address Dhatu Rog symptoms and restore vitality with personalized care.",
-            "amount": 5500
+            "amount": 3500
         },
         {
+            "key": "5",
             "name": "Erectile dysfunction",
             "description": "Regain sexual function and confidence with effective erectile dysfunction treatments.",
-            "amount": 9500
-        },
-        {
-            "name": "Constipation",
-            "description": "Relieve discomfort and promote digestive health with tailored constipation treatments.",
             "amount": 5500
         },
         {
+            "key": "6",
+            "name": "Constipation",
+            "description": "Relieve discomfort and promote digestive health with tailored constipation treatments.",
+            "amount": 2500
+        },
+        {
+            "key": "7",
             "name": "Low Libido",
             "description": "Boost sexual desire and vitality with personalized solutions for low libido.",
             "amount": 5500
         },
         {
+            "key": "8",
             "name": "Booster pack",
             "description": "Revitalize your overall health and well-being with our comprehensive booster pack.",
             "amount": 7500
         },
         {
+            "key": "9",
             "name": "Erection problem",
             "description": "Overcome erection difficulties with personalized treatment plans for improved sexual function.",
-            "amount": 9500
+            "amount": 5500
         }
     ]
 }

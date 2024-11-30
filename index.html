@@ -23,7 +23,7 @@
 
     <!-- header -->
     <header class="header bg-blue">
-        <nav class="navbar bg-blue">
+        <nav class="navbar">
             <div class="container flex">
                 <a href="/" class="navbar-brand">
                     <img class="logo-nav" src="images/logo.png" alt="site logo">
@@ -36,7 +36,7 @@
                                     <img class="cart-icon"
                                         src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-16.png">
                                 </a>
-                                <sup id="cart-count" class="cart-count" style="color: aliceblue; display: flex;align-items: center;"></sup>
+                                <sup id="cart-count" class="cart-count" style="color: #3c4d4a; display: flex;align-items: center;"></sup>
 
                             </div>
                         </form>
@@ -74,7 +74,7 @@
                                     <img class="cart-icon"
                                         src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-16.png">
                                 </a>
-                                <sup id="cart-count" class="cart-count" style="color: aliceblue;"></sup>
+                                <sup id="cart-count" class="cart-count" style="color: #3c4d4a;font-weight: 500;font-size: medium"></sup>
 
                             </div>
                         </form>
@@ -94,9 +94,6 @@ Online Consultation Available Now -->
                     <div class="btn-group">
                         <a href="https://api.whatsapp.com/send?phone=918429663333&text=Hello%2C%20I%20want%20to%20book%20an%20appoinment." class="btn btn-light-blue">Connect On Whatsapp</a>
                     </div>
-                </div>
-                <div class="header-inner-right">
-                    <img class="header-img" src="images/banner.png">
                 </div>
             </div>
         </div>
@@ -267,7 +264,7 @@ Online Consultation Available Now -->
                             <textarea rows="5" placeholder="Your Message" id="user-message" class="form-control"></textarea>
                         </div>
                         <button type="submit" class="btn btn-white btn-submit">
-                            <i class="fas fa-arrow-right"></i> Send Message
+                          Send Message
                         </button>
                     </form>
                 </div>
@@ -283,10 +280,7 @@ Online Consultation Available Now -->
             <div class="footer-inner text-white py grid">
                 <div class="footer-item">
                     <h3 class="footer-head">about us</h3>
-                    <div class="icon">
-                        <img src="images/logo.png">
-                    </div>
-                    <p class="text text-md" style="padding-right: 14px;">Nirvaan Ayurvedic Clinic: Traditional Ayurveda, Modern Healthcare, Comprehensive Solutions.</p>
+                    <p class="text text-md" style="padding-right: 14px;padding-top: 10px">Nirvaan Ayurvedic Clinic: Traditional Ayurveda, Modern Healthcare, Comprehensive Solutions.</p>
                     <address style="padding-right: 14px;">
                         Brahm Dutt Plaza, opposite Hotel Piccadily, Alambagh, Lucknow, Uttar Pradesh 226012
                     </address>
@@ -344,7 +338,7 @@ Online Consultation Available Now -->
                     <li><a href="#" class="text-white flex"> <i class="fab fa-twitter"></i></a></li>
                     <li><a href="#" class="text-white flex"> <i class="fab fa-linkedin"></i></a></li>
                 </ul>
-                <p style="padding-top: 14px;color: white">© Copyright Nirvaan Ayurvedic Clinic 2024. Designed and Developed by: <a href="https://owlmarkmedia.in/" style="color: #006e36;font-weight: 700;">owlmarkmedia.in</a></p>
+                <p style="padding-top: 14px;color: white">© Copyright Nirvaan Ayurvedic Clinic 2024. Designed and Developed by: <a href="https://owlmarkmedia.in/" style="color: rgb(209 189 159);font-weight: 700;">owlmarkmedia.in</a></p>
             </div>
         </div>
     </footer>
@@ -432,9 +426,7 @@ countElements.forEach((element, index) => {
                     packageServiceItem.classList.add('package-service-item', 'bg-white');
                     const iconImage = iconImages[item.key];
                     packageServiceItem.innerHTML = `
-                <div class="icon flex">
-                    <img src="${iconImage}" alt="Icon" class="icon-img">
-                </div>
+              
                 <h3>${item.name}</h3>
                 <p class="text text-sm">${item.description}</p>
                 <p  class="cart-amount"> ₹ ${item.amount}</p>

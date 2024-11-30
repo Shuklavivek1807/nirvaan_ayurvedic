@@ -11,6 +11,7 @@
     --poppins-font: 'Poppins', sans-serif;
     --transition: all 0.3s ease-in-out;
     --box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2)!important;
+    --icon-color: #3c4d4a;
 }
 
 /* some resets */
@@ -40,7 +41,7 @@ a{
     color: var(--dark-color);
 }
 .bg-blue{
-    background-color: #53c36e;
+    background-color: white;
 }
 .bg-white{
     background-color: var(--light-color);
@@ -189,7 +190,7 @@ button[class ^= navbar]:hover{
 }
 .subpage_heading{
     text-align: center;
-     color: #006e36;
+     color: var(--icon-color);
      margin-top: 182px;
      margin-bottom: 15px;
 }
@@ -663,7 +664,7 @@ sup {
 
 /* footer */
 .footer{
-    background-color: var(--dark-color);
+    background-color: var(--icon-color);
 }
 .footer-item{
     margin-bottom: 6rem;
@@ -698,8 +699,9 @@ sup {
 .footer-item .tags-list li{
     margin: .5rem 1rem;
     padding: .5rem 1rem;
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(209 189 159);
     border-radius: .4rem;
+    color: var(--icon-color)
 }
 .footer-item a{
     margin-bottom: 1rem;
@@ -739,7 +741,7 @@ sup {
 }
 .footer-links li a:hover{
     background-color: var(--light-color);
-    color: #53c36e;
+    color: var(--icon-color);
 }
 
 
@@ -946,7 +948,7 @@ sup {
         margin-left: 3.5rem;
     }
     .nav-link{
-        color: var(--light-color);
+        color: var(--icon-color);
         opacity: 1;
         font-weight: 500;
         position: relative;
@@ -968,7 +970,7 @@ sup {
         -webkit-transform: none;
             -ms-transform: none;
                 transform: none;
-        color: var(--light-color);
+        color: var(--icon-color);
     }
     .nav-link:hover::after{
         opacity: 1;
@@ -1048,52 +1050,3 @@ sup {
 .disable-button {
     cursor:none;
 }
-
-.bot-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 213, 82);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #bot-options {
-    position: absolute;
-    bottom: 70px;
-    left: 20px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-  }
-  .hidden {
-    display: none;
-  }
-
-  #bot-icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .rotated {
-    transform: rotate(45deg);
-  }
-
-  .icon{
-    color: rgba(0, 213, 82);
-    font-size: 3vh;
-    padding: 10px;
-  }
-  .phone-icon{
-    color: rgba(0, 213, 82);
-    font-size: 2.5vh;
-    padding: 10px;
-  }
-  
